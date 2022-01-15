@@ -14,3 +14,7 @@ It is recommended to use [Pypy](https://www.pypy.org/) for speedups, the perform
 <Interpreter> A.py comp <FILE>.bf # to compile brainf*ck files
 ```
 Replace interpreter with your favorite python interpreter, ie, pypy, cpython, etc..
+
+
+# How it works
+it compiles AAA to brainf\*ck, then interprets that brainf\*ck using this [Interpreter](https://github.com/pocmo/Python-Brainfuck) made by pocmo.
