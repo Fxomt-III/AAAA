@@ -10,7 +10,7 @@ It is recommended to use [Pypy](https://www.pypy.org/) for speedups, the perform
 
 
 # How it works
-it compiles AAA to brainf\*ck, then interprets that brainf\*ck using this [Interpreter](https://github.com/pocmo/Python-Brainfuck) made by pocmo.
+it compiles AAA to brainf\*ck, then interprets that brainf\*ck using this [Interpreter](https://github.com/eriknyquist/bfi) made by eriknyquist.
 
 # How to use
 
