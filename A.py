@@ -61,12 +61,15 @@ def AAA(code, mode):
     
 
 if len(sys.argv) >= 1:
-    if sys.argv[1] == "comp" and len(sys.argv) >= 2:
-        print(sys.argv[2])
+    if sys.argv[1] == "compf" and len(sys.argv) >= 2:
         with open(".AAA", "w+") as f:
             code = AAA(open(sys.argv[2], "r").read(), "bf")
             code = get_list(code, 30)
             f.write('\n'.join(code))
+    elif sys.argv[1] == "compA" and len(sys.argv) >= 2:
+        code = AAA(open(sys.argv[1], "r").read(), "AAA")
+        with open(".AAA", "w+") as f:
+            f.write(code)
     else:
         code = AAA(open(sys.argv[1], "r").read(), "AAA")
         bfi.interpret(code)
