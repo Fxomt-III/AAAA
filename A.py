@@ -3,6 +3,7 @@
 
 import sys
 import os
+import re
 try:
     import bfi
 except:
@@ -12,7 +13,12 @@ except:
         os.system("python -m pip install bfi")
     else:
         print("Goodbye!")
-    exit(1)
+        exit(1)
+    try:
+        import bfi
+    except:
+        print("Still, could not import, please run the program again.")
+        exit(1)
 
 # bfpp = open("bfpp.py", "r").read()
 
@@ -36,7 +42,7 @@ def AAA(code, mode):
     global compiled
     if mode == "AAA":
         # Translate AAAAAAAAAAA to bf++
-        tape = get_list(code, 4)
+        tape = get_list(re.sub(r'\(.*?\)', '', code), 4)
         for item in tape:
             for i, token in tapes.items():
                 if item == i:
@@ -54,9 +60,10 @@ def AAA(code, mode):
     return compiled
     
 
-if len(sys.argv) > 1:
+if len(sys.argv) >= 1:
     if sys.argv[1] == "comp" and len(sys.argv) >= 2:
-        with open(sys.argv[2].split(".")[0]+".AAA", "w+") as f:
+        print(sys.argv[2])
+        with open(".AAA", "w+") as f:
             code = AAA(open(sys.argv[2], "r").read(), "bf")
             code = get_list(code, 30)
             f.write('\n'.join(code))
