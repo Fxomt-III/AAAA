@@ -17,7 +17,8 @@ it compiles AAA to brainf\*ck, then interprets that brainf\*ck using this [Inter
 first, compile your brainf\*ck file to AAA using 
 
 ```
-<Interpreter> A.py comp <FILE>.bf # to compile brainf*ck files to AAA files
+<Interpreter> A.py compf <FILE>.bf # to compile brainf*ck files to AAA files
+<Interpreter> A.py compA <FILE>.bf # to compile AAA files to brainf*ck files
 ```
 
 then, run the compiled file using:
